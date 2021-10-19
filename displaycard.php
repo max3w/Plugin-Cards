@@ -1,7 +1,5 @@
 <?php 
 
-//in it we will extract data from our table myfirstplugin, display it and delete it by clicking on the "Delete" link.
-
 global $wpdb;
 $tablename = $wpdb->prefix."flashcards";
 
@@ -24,7 +22,7 @@ if(isset($_GET['delete_id'])){
 		<th>Date</th>
     </tr>
     <?php
-    // Получаем записи и, если они есть, выводим
+    // Display card
     $entriesList = $wpdb->get_results("SELECT * FROM ".$tablename." order by id desc");
     if(count($entriesList) > 0){
         $count = 1;
